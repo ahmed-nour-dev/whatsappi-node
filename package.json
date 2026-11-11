@@ -1,0 +1,60 @@
+{
+  "name": "whatsappi-node",
+  "version": "1.0.0",
+  "description": "A Node.js client for the Meta WhatsApp Cloud API — messages, templates, media, phone numbers, flows, QR codes, analytics and webhook verification. Zero dependencies, mirrors the official Postman collection.",
+  "keywords": [
+    "whatsapp",
+    "whatsapp-cloud-api",
+    "whatsapp-business",
+    "meta",
+    "graph-api",
+    "messaging",
+    "notifications",
+    "webhook"
+  ],
+  "homepage": "https://github.com/ahmed-nour-dev/whatsappi-node#readme",
+  "bugs": "https://github.com/ahmed-nour-dev/whatsappi-node/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmed-nour-dev/whatsappi-node.git"
+  },
+  "license": "MIT",
+  "author": "Ahmed Nour (https://github.com/ahmed-nour-dev)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "CHANGELOG.md"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean --target node18",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}
