@@ -1,6 +1,6 @@
 {
   "name": "whatsappi-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Node.js client for the Meta WhatsApp Cloud API — messages, templates, media, phone numbers, flows, QR codes, analytics and webhook verification. Zero dependencies, mirrors the official Postman collection.",
   "keywords": [
     "whatsapp",

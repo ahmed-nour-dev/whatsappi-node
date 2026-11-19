@@ -14,6 +14,8 @@ npm run build                              # tsup → dist/ (ESM + CJS + .d.ts, 
 
 CI (`.github/workflows/tests.yml`) runs typecheck, test and build on Node 18, 20 and 22, so don't use APIs newer than Node 18. `prepublishOnly` runs the same three steps.
 
+Releasing: bump `version` in `package.json`, add a `CHANGELOG.md` entry, push, then publish a GitHub release tagged `v<version>`. `.github/workflows/release.yml` publishes to npm via trusted publishing (OIDC, no token). It fails if the tag doesn't match `package.json`, and sends pre-release versions (`-beta.1` etc.) to the `next` dist-tag.
+
 ## What this is
 
 A zero-runtime-dependency TypeScript client for Meta's WhatsApp Cloud API. It is a **port of the Laravel package `ahmednour/laravel-whatsapp-cloud-api`** and deliberately keeps parity with it: same service names, method names, argument order and result shapes (including snake_case result keys like `message_id` and `media_id`). Endpoint coverage mirrors the official "WhatsApp Cloud API" Postman collection. When adding or changing methods, keep them consistent with the PHP package. Any intentional divergence goes in the README's "Differences from the Laravel package" section.

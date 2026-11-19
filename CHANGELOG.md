@@ -2,6 +2,13 @@
 
 All notable changes to `whatsappi-node` will be documented in this file.
 
+## [1.0.1]
+
+### Changed
+
+- Releases are now published from GitHub Actions with npm trusted publishing, so each
+  version carries npm provenance. No changes to the library code or API.
+
 ## [1.0.0]
 
 ### Added
